@@ -1,0 +1,48 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="23">
+            <item index="0" class="java.lang.String" itemvalue="chardet" />
+            <item index="1" class="java.lang.String" itemvalue="six" />
+            <item index="2" class="java.lang.String" itemvalue="nltk" />
+            <item index="3" class="java.lang.String" itemvalue="certifi" />
+            <item index="4" class="java.lang.String" itemvalue="requests" />
+            <item index="5" class="java.lang.String" itemvalue="urllib3" />
+            <item index="6" class="java.lang.String" itemvalue="Lango" />
+            <item index="7" class="java.lang.String" itemvalue="pycorenlp" />
+            <item index="8" class="java.lang.String" itemvalue="idna" />
+            <item index="9" class="java.lang.String" itemvalue="SPARQLWrapper" />
+            <item index="10" class="java.lang.String" itemvalue="jieba" />
+            <item index="11" class="java.lang.String" itemvalue="web" />
+            <item index="12" class="java.lang.String" itemvalue="refo" />
+            <item index="13" class="java.lang.String" itemvalue="transformers" />
+            <item index="14" class="java.lang.String" itemvalue="efficientnet_pytorch" />
+            <item index="15" class="java.lang.String" itemvalue="torch" />
+            <item index="16" class="java.lang.String" itemvalue="bitfinex-api-py" />
+            <item index="17" class="java.lang.String" itemvalue="protobuf" />
+            <item index="18" class="java.lang.String" itemvalue="scikit_learn" />
+            <item index="19" class="java.lang.String" itemvalue="transformers.egg" />
+            <item index="20" class="java.lang.String" itemvalue="pyngrok" />
+            <item index="21" class="java.lang.String" itemvalue="torchvisiontorch" />
+            <item index="22" class="java.lang.String" itemvalue="torchvisionbeautifulsoup4" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="src.lisa.data.data_crawler.download" />
+          <option value="src.lisa.data.data_crawler.is_image_path" />
+          <option value="src.lisa.scraper.create_dir" />
+          <option value="src.lisa.model.efficientnet.Config" />
+          <option value="src.financial_indicators.indicators.get_time" />
+          <option value="src.funding_strategy.save_json" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
