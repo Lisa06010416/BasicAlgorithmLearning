@@ -70,3 +70,28 @@ class Solution:
         for i in range(1, n + 1):
             tree_list.extend(self._build_bst(i, 1, n))
         return tree_list
+
+
+"""108. Convert Sorted Array to Binary Search Tree"""
+class Solution:
+    """ convert a sorted array to high balance BST
+    Input: nums = [-10,-3,0,5,9]
+    Output: [0,-3,9,-10,null,5]
+    Explanation: [0,-10,5,null,-3,null,9] is also accepted:
+    """
+    def build_bst(self, nums, left, right):
+        if left > right:  # !!
+            return None
+
+        mid = (left + right) // 2
+        node = TreeNode(nums[mid])
+        node.left = self.build_bst(nums, left, mid - 1)
+        node.right = self.build_bst(nums, mid + 1, right)
+        return node
+
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        """
+        因為要是 high balance，所以要由最中間的點開是建立node
+        """
+        root = self.build_bst(nums, 0, len(nums) - 1)
+        return root

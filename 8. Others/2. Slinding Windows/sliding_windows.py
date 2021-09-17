@@ -73,3 +73,37 @@ class Solution:
 
 
 
+
+"""713. Subarray Product Less Than K"""
+class Solution:
+    """ 給予一個nums array，以及一個目標數k，請問nums中有多少個連續的subarray乘績小於k
+
+    input: nums = [1,1,1], k = 2
+    output: 6
+
+    input: nums = [10,5,2,6], k = 100
+    output: 8
+    """
+    def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        """ 使用Slinding Windows解
+        題目要問的是有幾個continue sub array符合乘績小於k
+        * 給更新一個window size會有幾格continue sub array符合乘績小於k：
+        [1] -> 1
+        [1, 2] -> 1+2
+        [1, 2, 3] -> 1+2+3
+        [1, 2, 3, 4] -> 1+2+3+4
+        每次更新完，符合條件的window size有 right-left+1個
+        """
+        left = 0
+        ans = 0
+        res = 1
+        for right in range(len(nums)):
+            # 更新目前window size裡的積
+            res = res * nums[right]
+            # 如果大於k，縮小window size
+            while res >= k and left <= right:
+                res /= nums[left]
+                left += 1
+            # 目前合理的windows size有幾個解
+            ans += (right - left + 1)
+        return ans

@@ -1,8 +1,57 @@
+from typing import Optional, List
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
+
+"""Binary Tree Inorder Traversal"""
+class Solution:
+    def inorderTraversal_recursive(self, root: Optional[TreeNode]) -> List[int]:
+        """give a root of a tree, return th in order traversal of its node's value"""
+        def traversal(root, sequence):
+            if not root:
+                return None
+
+            traversal(root.left, sequence)
+            sequence.append(root.val)
+            traversal(root.right, sequence)
+
+        sequence = []
+        traversal(root, sequence)
+        return sequence
+
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        """
+        stack  = [(node, state), ...]
+        state:
+        -1: no visite
+        0 : visited fitst time
+        1 : have visited the left child
+        """
+        stack = [[root, -1]]
+        seq = []
+        while stack:
+            point_node = stack[-1]
+            # if a node is None ...
+            if not point_node[0]:
+                stack.pop()
+                continue
+
+            # state translate
+            if point_node[1] == -1:
+                point_node[1] = 0
+                stack.append([point_node[0].left, -1])
+            elif point_node[1] == 0:
+                point_node[1] = 1
+                seq.append(point_node[0].val)
+                stack.append([point_node[0].right, -1])
+            else:
+                stack.pop()
+
+        return seq
 
 
 """ 98. Validate Binary Search Tree """

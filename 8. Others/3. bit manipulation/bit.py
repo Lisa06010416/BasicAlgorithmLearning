@@ -83,6 +83,7 @@ class Solution:
     solution 2: Bit Manipulation
     solution 3: fast/low point (不是常數的空間)
     solution 4: sort and find repeat (會改變nums)
+    solution 5: xor => 因為會有測資類似 [2,2,2,2,2]=>2 ，因此不能用xor
     """
     def findDuplicate(self, nums: List[int]) -> int:
         """

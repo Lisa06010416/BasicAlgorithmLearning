@@ -20,3 +20,6 @@
             * 完全背包問題 (unbounded knapsack problem)
             * 多重背包問題 (bounded knapsack problem)
             * 是否要裝滿 - 初始化方式
+    * range dp:
+        * dp[j] - 代表一個區間內的數值
+        * dp[i][j] - 代表區間i-j內的數值

@@ -21,4 +21,3 @@ class Solution:
                 for k in reversed(range(nums[i][1], len(dp[0]))):
                     dp[j][k] = max(dp[j][k], dp[j - nums[i][0]][k - nums[i][1]] + 1)
         return dp[m][n]
-

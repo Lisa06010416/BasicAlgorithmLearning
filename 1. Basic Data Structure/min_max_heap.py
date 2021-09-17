@@ -94,3 +94,36 @@ class Solution:
                 heapq.heappush(minheap, new_val)
 
         return new_head.next
+
+
+
+
+"""313. Super Ugly Number"""
+class Solution:
+    """題目要求找出第n個ugly number
+       ugly number的定義是一個數的prime factors只有primes裡面給的數值
+    """
+    def nthSuperUglyNumber(self, n: int, primes: List[int]) -> int:
+        """
+        min heap
+        primes = [2,3,5]
+        urgly_number_sep = [1, 2, 3, 4]
+        (2)  *2, 2x2, *2x2, 2*3
+        (3)   3,  *3,  3*2, 3*2
+        (5)   4,   4,   *4, 4*2
+        2, 4, 8, 16
+        7, 7*2
+        可以看到每次要選的都是3者中的最小值(有*者)
+        """
+        urgly_number_sep = [1]
+
+        candidate = [(p, p, 0) for p in primes]  # (value, prime, time)
+        heapq.heapify(candidate)
+
+        while len(urgly_number_sep) < n:
+            min_value = candidate[0][0]
+            urgly_number_sep.append(min_value)
+            while candidate[0][0] == min_value:
+                value, prime, time = heapq.heappop(candidate)
+                heapq.heappush(candidate, (prime * (urgly_number_sep[time + 1]), prime, time + 1))
+        return urgly_number_sep[-1]

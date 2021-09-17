@@ -1,38 +1,40 @@
 from typing import List
 
+""" --------------------------------- Type 1 ---------------------------------"""
+
 """ 42 Trapping Rain Water """
 class Solution(object):
    """
-   # 1. Dp
-   # 2. two point
-   # 3. monotone stack
+   # 1. Dp - 對每個格子分別找到其左右最高的牆，再去計算該格子可以累積的水量
+   # 2. two point -
+   # 3. monotone stack - 遞減
    """
-   def trap(self, height):
-      stack = []
-      water = 0
-      i=0
-      while i<len(height):
-         if len(stack) == 0 or height[stack[-1]]>=height[i]:
-            print("add element in stack")
-            stack.append(i)
-            i+=1
+   def trap(self, height: List[int]) -> int:
+      """monotone stack"""
+      monotone_stack = [(-1, 0)]
+      res = 0
+      for i in range(len(height)):
+         if len(monotone_stack) <= 1 or height[i] <= monotone_stack[-1][1]:
+            monotone_stack.append((i, height[i]))
          else:
-            print("pip element in stack")
-            x = stack.pop()
-            if len(stack) != 0:
-               temp = min(height[stack[-1]],height[i])
-               dist = i - stack[-1]-1
-               water += dist*(temp - height[x])
-         print(stack)
-         print(water)
-      return water
+            while monotone_stack[-1][0] != -1 and height[i] > monotone_stack[-1][1]:
+               pre_index, pre_hight = monotone_stack.pop(-1)
+               left_wall_index, lef_wall_high = monotone_stack[-1]
+               hight = max(min(height[i], lef_wall_high) - pre_hight, 0)
+               width = i - left_wall_index - 1
+               res += hight * width
+            monotone_stack.append((i, height[i]))
+      return res
 
 # ob = Solution()
 # print(ob.trap([0,1,0,2,1,0,1,3,2,1,2,1]))
 
+
+""" --------------------------------- Type 2 ---------------------------------"""
+
 """82  Largest Rectangle in Histogram"""
 class Solution:
-   """ monotone stack
+   """ monotone stack - 遞增
    * 保證stack內的值越來越大
    * 當遇到比stack top還小的值的時候：
       * 第一個被pop出來的值自己組成一個rectangle
@@ -97,18 +99,25 @@ class Solution:
       return max_area
 
 
+""" --------------------------------- Type 3 ---------------------------------"""
+# 求第i個值(被pop的)中左右分別連續大於自己的數的數量 => 遞增 stack
+
 """907. Sum of Subarray Minimums"""
 class Solution:
    """
-   題目要求連續子集的每個子集的最小值的和
-
-   遞增 stack 可以知道當一個值被pop時，其小於左邊與右邊幾個值得數
-   而當一個值是幾個子集的最小值的數量 = 小於左邊值的數量 x 小於右邊值的數量
-
+   題目給一個array要求每個**連續**子集中最小值的和
    以 arr = [3, 1, 2, 4]
-   1 的 subarr 數量為 2x3
-   1 => 1, 12, 124
-   31 => 1, 12, 124
+   Subarrays are [3], [1], [2], [4], [3,1], [1,2], [2,4], [3,1,2], [1,2,4], [3,1,2,4].
+   Minimums are 3, 1, 2, 4, 1, 1, 2, 1, 1, 1.
+   Sum is 17.
+
+   1. dp
+   dp_left[i] => 到第i個值時的左邊有幾個連續大於自己的值
+   dp_right[i] => 到第i個值時的右邊有幾個連續大於自己的值
+
+   2. monotone stack - 遞增
+   遞增 stack 可以知道當一個值被pop時，其左邊與右邊有幾個連續大於本身的數字
+   而當一個值是幾個子集的最小值的數量 = 左邊小於本身值的數量 x 右邊小於本身值的數量
    """
    def sumSubarrayMins(self, arr: List[int]) -> int:
       stack = []
@@ -155,7 +164,7 @@ class Solution:
       nums.append(-1)
       stack = [-1]
       max_val = 0
-      accum_sum = list(accumulate(nums, initial=0))
+      accum_sum = list(accumulate(nums, initial=0))  # !! Tips
       for val_inde, val in enumerate(nums):
          while stack[-1] != -1 and val < nums[stack[-1]]:
             pop_index = stack.pop(-1)
@@ -165,6 +174,8 @@ class Solution:
       return max_val % (10 ** 9 + 7)
 
 
+
+""" --------------------------------- Type 4 ---------------------------------"""
 
 """ 1944. Number of Visible People in a Queue """
 class Solution:

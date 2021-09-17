@@ -1,10 +1,22 @@
 # Programming Learning
 
-## 進度規劃
--[ ] sort
--[ ] 筆記複習
--[ ] 星號複習
+1. 描述問題，確認問題正確，問問題
+    1. 分析多種方法講時間/空間複查度
+2. 15分鐘一題medium，寫題時要描述作法
 
+question:
+* 回傳組合時是否可以排序
+* 回傳多個index 是否可以重複
+* 輸入值的特殊情況
+
+##
+數量 ：
+* occurrence -> 出現次數
+* xx's count
+*  sorted into decreasing order of frequency of occurrence
+
+## 解題紀錄
+[解題紀錄](https://docs.google.com/spreadsheets/d/1Vgn7PrWuRJLGRGjoG0iS5nRqHqBfkUS8Y54vimAVZYc/edit#gid=0)
 
 ## 學習清單
 
@@ -15,10 +27,12 @@
 ### LeetCode 攻略
 
 * [演算法電子書](https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/)
+* [Leetcode常見題型即題目列表](https://zhuanlan.zhihu.com/p/341176507)
 
-
-
-
+### Question List
+* [Blind 75 Must Do Leetcode](https://leetcode.com/list/xi4ci4ig/)
+* [Top Interview Questions](https://leetcode.com/explore/interview/card/top-interview-questions-medium/)
+* [List of 2020 interview question for Google](https://leetcode.com/discuss/interview-question/971009/List-of-2020-interview-question-for-Google)
 
 --------
 

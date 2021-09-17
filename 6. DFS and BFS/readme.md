@@ -1,6 +1,16 @@
-# DFS and BFS
+# DFS 
+ 
+ 
+# BFS
+* 某些題目可能可以用BFS, 空間複雜度會比較好, ex
+    * Finding a shortest path in a nxm matrix
 
-## Backtracking
+    
+
+
+
+
+# Backtracking
 
 * 通常題目有"找到全部的..."
 
