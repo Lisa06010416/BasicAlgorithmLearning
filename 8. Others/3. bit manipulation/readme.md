@@ -15,7 +15,7 @@ Tips:
 |:----|--------|-----|-----|-----|-----|
 |&|and|x & 0s = 0|x & 1s = x|x & x = x||
 | \| |or      |x \| 0s = x|x \| 1s = 1s|x \| x =x||
-|^|xor|x ^ 0s = x|x ^ 1s = ~x|x ^ x = 0|a ^ b 快速交換 a,b|
+|^|xor|x ^ 0s = x|x ^ 1s = ~x|x ^ x = 0|交換 x,y : X^=Y, Y^=X, X^=Y|
 | ~        | Not         |             |              |           ||
 | <<       | left shift  |x*2 = x << 2||||
 | >>       | right shift | x/2 = x >> 2 |              |           ||
