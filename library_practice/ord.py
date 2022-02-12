@@ -12,3 +12,7 @@ print(type({}) == type(dict)) # False
 
 # isinstance
 print(isinstance({}, dict)) # True
+isinstance({}, (dict, list))
+
+import collections
+isinstance([], collections.Sequence)

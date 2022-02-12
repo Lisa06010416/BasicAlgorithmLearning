@@ -7,6 +7,11 @@ from collections import defaultdict
 class Solution:
     """輸入多個 str 找到 Anagram(相同字母組成的字)
     ["eat","tea","tan","ate","nat","bat"]  => [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+    input : ["eat", "aet"]
+
+    n : avg of letter num of word in strs
+    nlogn
     """
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         record_dict = defaultdict(list)

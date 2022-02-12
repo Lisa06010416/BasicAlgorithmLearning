@@ -74,7 +74,7 @@
     q.put('hello')
     q.get()
     q.qsize()
-    q.empety()
+    q.empty()
     q.full()
     ```
 * 還有一些其他功能，ex LifoQueue、PriorityQueue
@@ -86,6 +86,7 @@ priority queue 的一種實作方法
 題目：
 * 23. Merge k Sorted Lists
 * 295. Find Median from Data Stream
+* Top K Frequent Elements
 * 378. Kth Smallest Element in a Sorted Matrix
 
 

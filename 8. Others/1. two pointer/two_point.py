@@ -28,7 +28,7 @@ class Solution:
 
 """977. Squares of a Sorted Array"""
 class Solution:
-    """ 給予一個排序好的nums array，將李片的值取平方後，由小到達排序
+    """ 給予一個排序好的nums array，將值取平方後，由小到達排序
     Input: nums = [-4,-1,0,3,10]
     Output: [0,1,9,16,100]
     """
@@ -164,4 +164,3 @@ class Solution:
                     matrix[cur[0]][cur[1]], pre_val = pre_val, matrix[cur[0]][cur[1]]
             round_now += 1
         return matrix
-

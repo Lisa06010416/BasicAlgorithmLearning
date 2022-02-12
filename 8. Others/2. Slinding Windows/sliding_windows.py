@@ -39,7 +39,7 @@ class Solution:
 """424. Longest Repeating Character Replacement"""
 class Solution:
     """
-    給予一個字串s跟整數k，可以任意替換s中的任意字母為其他字母，求最長的字母完全相同的子字串
+    給予一個字串s跟整數k，可以任意替換s中的任意字母為其他字母k次，求最長的字母完全相同的子字串
     s = "ABAB", k = 2 => 4 (replace both A or B)
     """
     def characterReplacement(self, s: str, k: int) -> int:

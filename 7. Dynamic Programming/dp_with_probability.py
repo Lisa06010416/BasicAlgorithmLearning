@@ -16,7 +16,7 @@ class Solution:
         2. k >= i > maxPts
             dp[i] = 1/maxPts*(dp[i-1], dp[i-2], ..., dp[i-maxPts]),
             累計點數在 maxPts 到 k之間的點數, ex 11 點 : (1,10), (2,9), ..., (10,1)
-                1. 抽最後一張牌的機率都是 1/W
+                1. 抽最後一張牌的機率都是 1/maxPts
                 2. 1/maxPts*dp[1] + 1/maxPts*dp[2] +...+ 1/maxPts*dp[10] = 1/maxPts*(dp[1] + ... + dp[10])
         3. i >= k
             dp[i] = dp[k-1]...+dp[i-maxPts]

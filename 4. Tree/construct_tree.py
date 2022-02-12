@@ -15,28 +15,15 @@ class Solution:
     preorder確認root
     inorder確認左右子樹
     """
-    def construct_binary_tree(self, preorder, inorder):
-        if not preorder:
-            return None
-
-        root = preorder[0]
-        root_index = inorder.index(root)
-
-        # left
-        left_node = self.construct_binary_tree(preorder[1:root_index + 1], inorder[0:root_index])
-        # right
-        right_node = self.construct_binary_tree(preorder[root_index + 1:], inorder[root_index + 1:])
-
-        root_node = TreeNode(val=root)
-        root_node.left = left_node
-        root_node.right = right_node
-
-        return root_node
-
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        return self.construct_binary_tree(preorder, inorder)
-
-
+    class Solution:
+        def buildTree(self, preorder, inorder):
+            if not preorder:
+                return None
+            root = TreeNode(val=preorder[0])
+            root_idx = inorder.index(preorder[0])
+            root.left = self.buildTree(preorder[1:1 + root_idx], inorder[:root_idx])
+            root.right = self.buildTree(preorder[1 + root_idx:], inorder[root_idx + 1:])
+            return root
 
 
 """95. Unique Binary Search Trees II"""

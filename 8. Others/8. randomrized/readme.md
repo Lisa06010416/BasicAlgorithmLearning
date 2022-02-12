@@ -6,7 +6,7 @@
     
     * random sample k item from an linklist n(can't check len)
     ```
-    from wiki
+    # from wiki
     從S中抽取首k項放入「水塘」中
     對於每一個S[j]項（j ≥ k）：
        隨機產生一個範圍從0到j的整數r

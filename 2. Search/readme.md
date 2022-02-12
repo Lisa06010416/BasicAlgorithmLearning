@@ -32,7 +32,8 @@
                      return right # 小於等於
                      # return right + 1 # 大於
             ```
-              
+        * 題目：
+            * 34. Find First and Last Position of Element in Sorted Array
     * type3 - 需要由其他函數來判斷移動mid point的方式
     * type4 - 特殊題
     
@@ -40,6 +41,8 @@
 * **常見應用**:
     * search insert position
     * sqrt(n)
-    * 
+    * 在未排序的數列中找區域峰值(只要找到一個即可)
+        * 162. Find Peak Element
+ 
     
     

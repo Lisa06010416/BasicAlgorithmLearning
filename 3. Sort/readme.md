@@ -18,5 +18,3 @@
 | Heap Sort     | O(nlogn) | O(nlogn) | O(nlogn) | O(1) | False |
 | Time Sort              | O(nlogn) | O(nlogn) | O(nlogn) | O(N) | True |
 | Counting Sort | O(N+R) | O(N+R) | O(N+R) | O(N+R) | True |
-
-

@@ -39,7 +39,7 @@ class Solution:
         # A(加上加號的數字): pos set, B(加上減號的數字): neg set
         # sum = A + B, target = A - B
         # A = (sum + target)/2
-        # 題目等於求 由 nums中選出一些數 和為 (sum + target)/2, 可歇數有幾種組合方法
+        # 題目等於求 由 nums中選出一些數 和為 (sum + target)/2, 有幾種組合方法
 
         if (sum(nums) + target) % 2 == 1:
             return 0

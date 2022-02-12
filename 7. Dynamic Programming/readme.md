@@ -1,4 +1,5 @@
-## Dynamic Programming
+# Dynamic Programming
+* [DP Pattern](https://leetcode.com/discuss/general-discussion/458695/dynamic-programming-patterns)
 
 * DP 本身和 memory + recursive 十分相似，只是遍歷值的方法不同
 

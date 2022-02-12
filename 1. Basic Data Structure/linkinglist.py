@@ -149,3 +149,18 @@ class LRUCache:
             key = self.lru_sequence.del_head()
             del self.node_dict[key]
             self.node_num -= 1
+
+"""160. Intersection of Two Linked Lists"""
+class Solution:
+    """ 求兩個linklist是在哪一個點開始相交
+    0. 用dict紀錄
+    1. 作弊法 遍歷list A 把職改為str 在遍歷list B如果看到type str表示有相交，回傳時再改回int
+    2. 起點對齊 先分別便利兩個list，找到兩者的長度差，把長的list先往後移，等長的兩個list可以一起檢查
+    3. 用類似快慢指針的方法，兩個指針由兩個head出發，當走到底時，由另一個head再出發，指針相交的地方可能會是交點處或是鍊錶尾端空節點
+    """
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        a,b = headA, headB
+        while a != b:
+            a = a.next if a else headB
+            b = b.next if b else headA
+        return a

@@ -1,4 +1,5 @@
 from typing import List
+import queue
 
 """994. Rotting Oranges"""
 class Solution:
@@ -46,3 +47,32 @@ class Solution:
             return change_num
         else:
             return -1
+
+
+
+"""116. Populating Next Right Pointers in Each Node"""
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        q = queue.Queue()
+        q.put([root, 0])
+        while not q.empty():
+            point_node, point_level = q.get()
+            if not point_node:
+                break
+            if not q.empty() and point_node:
+                if q.queue[0][1] == point_level:
+                    point_node.next = q.queue[0][0]
+
+            if point_node.left:
+                q.put([point_node.left, point_level + 1])
+                q.put([point_node.right, point_level + 1])
+        return root

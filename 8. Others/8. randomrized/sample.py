@@ -1,6 +1,6 @@
 """382. Linked List Random Node"""
 import random
-
+from typing import Optional
 
 class Solution:
 
