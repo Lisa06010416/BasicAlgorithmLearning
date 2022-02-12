@@ -6,22 +6,19 @@ Tips:
 * 找不同：
     * 兩個完全相同的list只有一個不同 -> xor 可以找到
     * 如果不能確定其中一個list是什麼，則兩個
-* 計算 ：
-    * a >> 1 等於除二
-    * a << 1 等於乘二
-    * a ^ b 快速交換 a,b
+    
     
 
 
 ## Bitwise Operator
-|Operator |Name|Trick 1|Trick 2|Trick 3|
-|:----|--------|-----|-----|-----|
-|&|and|x & 0s = 0|x & 1s = x|x & x = x|
-| \| |or      |x \| 0s = x|x \| 1s = 1s|x \| x =x|
-|^|xor|x ^ 0s = x|x ^ 1s = ~x|x ^ x = 0|
-| ~        | Not         |             |              |           |
-| <<       | left shift  ||||
-| >>       | right shift |             |              |           |
+|Operator |Name|Trick 1|Trick 2|Trick 3|Trick 4|
+|:----|--------|-----|-----|-----|-----|
+|&|and|x & 0s = 0|x & 1s = x|x & x = x||
+| \| |or      |x \| 0s = x|x \| 1s = 1s|x \| x =x||
+|^|xor|x ^ 0s = x|x ^ 1s = ~x|x ^ x = 0|a ^ b 快速交換 a,b|
+| ~        | Not         |             |              |           ||
+| <<       | left shift  |x*2 = x << 2||||
+| >>       | right shift | x/2 = x >> 2 |              |           ||
 
 
 
@@ -140,3 +137,10 @@ def update_ith_bit(num, i, value):
 
 
 
+# LeetCode Problem
+
+| Question                | Description                     | Solution                                                     |
+| ----------------------- | ------------------------------- | ------------------------------------------------------------ |
+| 371 Sum of Two Integers | 用bit maniplutation實作兩數相加 | 分別算出進位與和，重複動作直到carry=0，python要注意int range。O(max_bit_num) |
+|                         |                                 |                                                              |
+|                         |                                 |                                                              |
