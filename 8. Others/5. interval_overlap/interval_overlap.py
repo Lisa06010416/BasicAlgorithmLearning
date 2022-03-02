@@ -35,7 +35,7 @@ class solution:
         # sort record list
         record_list = sorted(record_list)
 
-        # cal max romm num
+        # cal max room num
         room_num = 0
         max_room_num = 0
         for t, n in record_list:
