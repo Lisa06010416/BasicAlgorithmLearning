@@ -44,11 +44,15 @@ get prime less than n
     
 * log 常用公式
 
-
+# python 負數計算問題
+* python 負數的//與％是向負無限取整數，教學(https://blog.csdn.net/sun___M/article/details/83142126)
+   ```
+   -5 // 2 = -3
+   5 // -2 = -3
+  -5 % 2 =
+  ```
 
 # python 浮點數計算問題
-
-
 # python math
 ### math
     * math.floor(n)/math.ceil(n) - 取上下界
