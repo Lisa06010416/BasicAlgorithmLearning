@@ -4,18 +4,6 @@
 
 
 
-## StringBuilder
-
-* 一般在concate時會將兩個字串複製到一個新的位子，下面這段程式碼第每次執行會需要w, 2w, .., nw，時間複雜度是O(xn^2)
-```
-sentence = ""
-for w in words:
-    sentence += w
-```
-* StringBuilder 可以創造一個 resizeable array 解決問題
-
-  
-
 ## Python string 操作
 
 * 如何將一個字串的字元排序
@@ -143,7 +131,17 @@ for w in words:
   
       return longest_palindrome.replace("%","")
   ```
-  
+
+
+### cumulative sum
+| 問題                                                         | 描述                                                         | 解法                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **Range Sum Query 1D — Immutable **                          | Given nums = [-2, 0, 3, -5, 2, -1]<br>sumRange(0, 2) -> 1<br/>sumRange(2, 5) -> -1 <br/>sumRange(0, 5) -> -3 | cumulative sum 1D                                            |
+| **Range Sum Query 2D — Immutable **                          | Given matrix = [  [3, 0, 1, 4, 2],   [5, 6, 3, 2, 1],   [1, 2, 0, 1, 5],   [4, 1, 0, 1, 7],   [1, 0, 3, 0, 5] ]<br/>sumRegion(2, 1, 4, 3) -> 8 <br/>sumRegion(1, 1, 2, 2) -> 11 <br/>sumRegion(1, 2, 2, 4) -> 12 | cumulative sum 2D                                            |
+| [**Range Sum Query 1D — Mutable **](https://www.cnblogs.com/grandyang/p/4985506.html) | 同 Range Sum Query 1D — Immutable，array可能改變             | 1. 把一個 Array 分成幾個段落，cache memory 存的就是每個段落的總和。<br>2. segment Tree<br>3. Binary Indexed Tree (Fenwick) |
+| [**Range Sum Query 2D — Mutable **](https://www.cnblogs.com/grandyang/p/5300458.html) | 同 Range Sum Query 2D — Immutable，array可能改變             | 1. 對 Row 或者 Col 做累加，求區間總和的時候就算出每個其中的 Row /Col 的區間總和再全部加起來<br/>2. segment Tree<br/>3. Binary Indexed Tree |
+
+
 
 # Hash
 
@@ -170,10 +168,11 @@ for w in words:
 | 227. Basic Calculator II  | Input: s = "3+2*2"  Output: 7 | stack, 數字前是+,-將數字放入stack,否則pop前一個數字做完運算再放入stack|
 | 238. Product of Array Except Self  | 給予一個nums array 返回給個數除了本身以外的積 <br>input: [1,2,3,4] output: [24,12,8,6] <br>不可以用除法 | 每一個輸入數的積會是其前面數列的積乘上後面數列的積，分別由組數的兩端便利找到 accumulate product sum |
 | 287. Find the Duplicate Number | 在 array 中找到唯一重複的數字，array中只會有1-len(array)的數字 | binary search + 鴿籠 / bit manipulation|
-| 348. Design Tic-Tac-Toe | 設計佔格子連線的遊戲，是否可以在Ｏ(1)的時間內判斷是否有說明 | 計算每行每列以及對角線上雙方的棋子數，數量等於邊長實代表該方勝利 |
+| 348. Design Tic-Tac-Toe | 設計佔格子連線的遊戲，是否可以在Ｏ(1)的時間內判斷是否有ｇ輸贏 | 計算每行每列以及對角線上雙方的棋子數，數量等於邊長實代表該方勝利 |
 | 772. Basic Calculator III  | "2*(5+5*2)/3+(6/2+8)" = 21 | stack, 將括號裡的內容當成一個整體用遞歸處理, => 或者把中敘式處理成前後敘式|
 | 378. Kth Smallest Element in a Sorted Matrix | Given an `n x n` `matrix` where each of the rows and columns is sorted in ascending order, return *the* `kth` *smallest element in the matrix*.<br>Input: matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8 <br>Output: 13 | 1. 排序後找<br>2. max heap<br>3. 在陣列的對大值和最小直間做Bibary Search，每次判斷陣列中小於mid的元素數量（由左下或右上開始找小於等於k的值）時間O(nlogX) X -> 最大最小值的差 |
-|  |  | |
+| **315. Count of Smaller Numbers After Self** | 計算給定array中每一個數字的又變有幾個小於自己的數<br>Input: nums = [5,2,6,1] Output: [2,1,1,0] | 1. 用binary search 把數值由右往左插入新的array中，在新array中的index就是答案<br>2. 建立一個bunary search tree，每個node多一個smaller參數紀錄小於自己的數有多少個，在插入節點時更新路徑上節點的smaller |
+| 406. Queue Reconstruction by Height | 給予一個people list，每一個people[i] = [h, k]，h代表該people的身高，k代表在正確的隊列中前面有幾個人比他高，將被短亂的list重建<br>Input: people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]] <br>Output: [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] | 對list排序，依h高到低排序，如果身高一樣的話在根據k小到大排序：[[7,0], [7,1], [6,1], [5,0], [5,2], [4,4]]<br>根據k將值依序插入一個新的隊列中，或是將沒排好的people往前移動 |
 
 | 問題                          | 描述                                                         | 解法                                                       |
 | ----------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |

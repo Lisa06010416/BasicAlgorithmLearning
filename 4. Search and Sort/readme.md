@@ -46,8 +46,8 @@
 ### 題目
 | Question | Describtion | Solution |
 | ------------- | ---- | ------------- |
-| **378. Kth Smallest Element in a Sorted Matrix** | 給予一個行與列都排序好的matrix，找到地k個小的元素<br/>Input: matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8 Output: 13 | 1. 把數值加入max heap中，如果heap內的值大數量於k，則pop，最後root會是答案<br>2. **binary search** 二分的是「答案」本身 |
-
+|**4. Median of Two Sorted Arrays** |找两个有序数组的中位数|中位數是第Ｋ個，分別對兩個組數找Ｋ//2個數字，比較小者代表中位數不在此，可以跟新index|
+|**378. Kth Smallest Element in a Sorted Matrix** | 給予一個行與列都排序好的matrix，找到地k個小的元素<br/>Input: matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8 Output: 13 | 1. 把數值加入max heap中，如果heap內的值大數量於k，則pop，最後root會是答案<br>2. **binary search** 二分的是「答案」本身 |
 
 # Sort
 
@@ -99,6 +99,16 @@
   * 取部分資料進記憶體中
   * 將記憶體中的資料進行排序，把結果輸出至檔案
   * 進行合併的處理，對每份文件讀取前面的一部分，並開始合併（heap sort，當某一個文件的資料都排序完時要在讀入新資料），合併完先輸儲暫存的合併結果，重複動作直到合併完成
+
+
+## python sort 套件
+| Question | Describtion |
+| ------------- | ---- |
+|排序一個list? 是否要reverse?|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.11.32.png" alt="截圖 2022-09-27 下午11.11.32" style="zoom:50%;" />|
+|[['c', 1], ['b', -4],  ['a', 7]] 直接sort? 根據第二個值sort?|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.13.25.png" alt="截圖 2022-09-27 下午11.13.25" style="zoom:50%;" />|
+|[2, 1, 0, 3] 如何根據list的直對index排序|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.15.06.png" alt="截圖 2022-09-27 下午11.15.06" style="zoom:50%;" />|
+|Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.<br>Since the result may be very large, so you need to return a string instead of an integer.<br>Input: nums = [3,30,34,5,9] <br>Output: "9534330"|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.08.03.png" alt="截圖 2022-09-27 下午11.08.03" style="zoom:50%;" />|
+
 
 ## 題目
 

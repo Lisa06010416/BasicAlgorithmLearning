@@ -4,21 +4,26 @@ from typing import List
 """312. Burst Balloons"""
 class Solution:
     def maxCoins(self, nums: List[int]) -> int:
-        """
-        dp 定義 ：
-        dp[i][j] => 戳破第i-j個氣球的最高分
-        轉移函數：
-        dp[i][j] = max(dp[i][j], nums[k]*nums[k-1]*nums[k+1]+dp[i][k-1]+dp[k+1][j]), j<=k<=i
-        戳破第i-j個氣球的最高分 = max(原本的分數, (搓破第Ｋ個氣球的時候的分數) + (i~k-1顆氣球的最高分) + (k+1~j顆氣球的最高分))
-        遍歷方法：
-        [3,1,5,8] => [3] -> [1] -> [5] -> [8] -> [3,1] -> [1,5] -> [5,8] -> [3,1,5]
-        """
+        """會超時 要把 遞迴改成回圈"""
+        dp = {}
+        def compute(l, r):
+            if dp.get((l, r)) != None:
+                return dp[(l, r)]
+            if l+1 == r:
+                return 0
+            ans = 0
+            for k in range(l+1, r):
+                ans = max(ans, compute(l, k) + compute(k, r) + nums[l] * nums[k] * nums[r])
+            dp[(l, r)] = ans
+            return ans
+        nums = [1] + nums + [1]
+        return compute(0, len(nums)-1)
 
-        def print_dp(dp):
-            print("~~~~~~~~~")
-            for i in dp:
-                print(i)
-
+class Solution:
+    def maxCoins(self, nums: List[int]) -> int:
+        """
+        迴圈版本
+        """
         nums = [1] + nums + [1]
         nums_len = len(nums)
         dp = [[0] * nums_len for _ in range(nums_len)]
@@ -33,7 +38,6 @@ class Solution:
                                                       dp[left_point][k - 1] + \
                                                       dp[k + 1][right_point]
                                                       )
-                print_dp(dp)
                 left_point += 1
         return dp[1][-2]
 

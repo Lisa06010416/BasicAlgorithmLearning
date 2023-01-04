@@ -4,7 +4,6 @@
 * 每個node會有 0-n 個 child
 * 不會有cycle，每個node都會相連
   * **edge num = node num - 1**
-
 * 樹也是一種graph
 
 ## 常用術語
@@ -201,6 +200,7 @@
 | **313. Super Ugly Number**                       | 給予一個質數列表找到地n個Super Ugly Number(是指其全部的prime factor都在給定的prime list中) | min heap primes = [2,3,5] <br/> (2)  *2, 2^2, *2^2, 2^3 <br/>(3)   3,  *3,  3^2, 3^2 <br/>(5)   4,   4,   *4, 4^2 <br/>urgly_number_sep = [1, 2, 3, 4, 6]<br/>可以看到每次要選的都是3者中的最小值(有*者)，把最小值由min heap中pop出來（一樣的值要全部一起拿出來），在將下一個數值放入，重複n次 |
 | 347. Top K Frequent Elements                     | 給一個nums array找出前k個最常出現的數字，時間複雜度小於 O(n log n) <br>Input: nums = [1,1,1,2,2,3], k = 2 Output: [1,2] | 計算每一個數字的出現次數並加入heap，再由heap中pop出k個數值   |
 | **378. Kth Smallest Element in a Sorted Matrix** | 給予一個行與列都排序好的matrix，找到地k個小的元素<br/>Input: matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8 Output: 13 | 1. 把數值加入max heap中，如果heap內的值大數量於k，則pop，最後root會是答案<br>2. **binary search** |
+| 218. The Skyline Problem                         | [說明](https://leetcode.com/problems/the-skyline-problem/)，給予一組建築物的list(start, end, hight)，計算出skyline<br>Input: buildings = [[0,2,3],[2,5,3]] <br>Output: [[0,3],[5,0]] | 用heap動態確認每個點的最大值                                 |
 
 
 

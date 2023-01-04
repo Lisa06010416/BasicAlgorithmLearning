@@ -1,3 +1,5 @@
+[cracking the interview <=> leetcode](https://ryanym.com/posts/ctci-on-leetcode/#chapter-8--recursion-and-dynamic-programming)
+
 # Programming Learning
 
 1. 描述問題，確認問題正確，問問題

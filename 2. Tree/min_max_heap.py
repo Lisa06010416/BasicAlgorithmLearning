@@ -96,9 +96,6 @@ class MedianFinder:
 # param_2 = obj.findMedian()
 
 
-
-
-
 """239. Sliding Window Maximum"""
 class Solution:
     def maxSlidingWindow_maxheap(self, nums: List[int], k: int) -> List[int]:
@@ -151,3 +148,41 @@ class Solution:
                 value, prime, time = heapq.heappop(candidate)
                 heapq.heappush(candidate, (prime * (urgly_number_sep[time + 1]), prime, time + 1))
         return urgly_number_sep[-1]
+
+
+"""218. The Skyline Problem"""
+class Solution:
+    def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
+        """
+        Input: buildings = [[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]]
+        Output: [[2,10],[3,15],[7,12],[12,0],[15,10],[20,8],[24,0]]
+        """
+        # 開始跟結束點都是要確認的
+        candidate_points = buildings.copy()
+        for b in buildings:
+            candidate_points.append([b[1], b[1], 0])
+        candidate_points.sort() 
+        
+        # 動態加入目前的點以及判斷該點的答案
+        heapb = []
+        b_idx = 0
+        res = []
+        while b_idx < len(candidate_points):
+            b = candidate_points[b_idx]
+            heapq.heappush(heapb, (-b[2], b[0], b[1])) # 放入目前的點
+            b_idx += 1
+            
+            # 下一個點如果位子跟目前一樣 則先將點都放入heap
+            if b_idx < len(candidate_points) and candidate_points[b_idx][0] == b[0]:
+                continue
+            
+            while heapb and heapb[0][2] <= b[0]: # 如果heap中的點已經結束則移除
+                heapq.heappop(heapb)
+            
+            if heapb: # x不在答案內 取目前最高者
+                if not res or -heapb[0][0] != res[-1][1]: 
+                    res.append([b[0], -heapb[0][0]])
+            else: # 沒有點 但是有要檢查的點 --> 某個building的結束
+                res.append([b[0], 0])
+            
+        return res

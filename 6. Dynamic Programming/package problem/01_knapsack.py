@@ -1,5 +1,33 @@
 from typing import List
 
+
+
+
+def zero_one_knapsack():
+    V = 10   #  背包容量
+    C = [1, 5, 7, 2, 6]  # 每個物品重量
+    W = [20, 5, 1, 4, 7] # 每個物品價值
+    
+    dp = [False]*(V+1)
+    dp[0] = 0
+    item = [[] for  i in range(V+1)]
+    
+    for i in range(len(C)):
+        for j in range(V, C[i]-1, -1):  # 倒敘遍歷 V - C[i] (j-C[i] >= 0)
+            if dp[j] < dp[j-C[i]] + W[i]: # 紀錄是哪一些item
+                item[j] = item[j-C[i]] + [i]
+            dp[j] = max(dp[j], dp[j-C[i]] + W[i])
+    # dp = [0, 20, 20, 24, 24, 24, 25, 27, 29, 31, 31]
+    # item = [[], [0], [0], [0, 3], [0, 3], [0, 3], [0, 1], [0, 4], [0, 1, 3], [0, 3, 4], [0, 3, 4]]
+    return dp[-1] 
+
+print(zero_one_knapsack()) # 31  (裝第 0,3,4 個 item)
+
+
+
+
+
+
 """416. Partition Equal Subset Sum"""
 class Solution:
     """檢查一個輸入的組數(值都會大於0),是否可以分成兩個值和相等的subset
