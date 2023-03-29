@@ -91,23 +91,9 @@ print(tic.move(2,0,1))
 def check_permutation_palindrome(input_str):
     record_int = 0
 
-    for c in input_str:
-        pos_c = ord(c) - ord('a')
-        # clear bit on record_int
-        target_1_mask = 1 << pos_c
-        target_0_mask = ~(1 << pos_c)
-        target_bit = record_int & target_1_mask
-        record_int = record_int & target_0_mask
-
-        # set target bit on record_int
-        target_mask = target_bit ^ target_1_mask
-        record_int = record_int | target_mask
-
-    while record_int > 0:
-        if (record_int & 1) == 1 and (record_int >> 1) > 0:
-            return False
-        record_int = record_int >> 1
-    return True
+    for i in s:
+        record_int = record_int ^ (1 << (ord(i) - ord('0')))
+    return True if not record_int else False
 
 print("\nPalindrome Permutation: ")
 print("aa: ", check_permutation_palindrome("aa"))
