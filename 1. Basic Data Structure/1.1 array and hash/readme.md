@@ -25,7 +25,7 @@ isupper()          # 判斷是否是大寫字母
 istitle()          # 判斷是否是title
 isnumeric()        # 判斷是否字串是否為數字(字串是否可以轉成數字)
 isdigit()          # 判斷是否是數字(只對正數有效)
-is.isalpha()       # 判斷是否是英文字母或數字
+isalnum()       # 判斷是否是英文字母或數字
 
 find()             # 找到某個子字傳的index，失敗會回傳nane
 index()            # 找到某個子字傳的index，失敗會error
@@ -156,6 +156,12 @@ ord('z') <-> chr(122)
 
 
 
+| 問題                                                         | 答案                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [**307. Range Sum Query 1D — Mutable **](https://www.cnblogs.com/grandyang/p/4985506.html)<br>使用binary index tree | <img src="readme.assets/截圖 2023-04-05 下午5.11.17.png" alt="截圖 2023-04-05 下午5.11.17" style="zoom:67%;" /><img src="readme.assets/截圖 2023-04-05 下午5.11.22-0686060.png" alt="截圖 2023-04-05 下午5.11.22" style="zoom:67%;" /> |
+
+
+
 ### 3.4 string / array
 
 | 問題                   | 描述                                                         | 解法                                                         |
@@ -176,7 +182,9 @@ ord('z') <-> chr(122)
   | 問題                           | 描述                                                         | 解法                                                         |
   | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
   | 41. First Missing Positive     | Given an unsorted integer array `nums`, return the smallest missing positive integer.<br>limit: 時間複雜度 Ｏ(N) 空間複雜度 Ｏ(1) | 1. sort在比較，但時間複雜度會是Ｏ(nlogn)<br>2.把值加入到hash中再由1開始判斷每個數字是否在hash中<br>3. 對比值跟其index,迴圈將錯誤位子的值放到正卻的位子 |
+  | 268 Missig Number              | Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array. | 1. 排序在遍歷<br>2. 算出0-n的總和在撿到array的sum<br>3. 設一個mask = 0跟array每個值or 在跟[1-n] or |
   | 287. Find the Duplicate Number | Give a array og intergers, has n+1 items, and each val in between 1~n, There is only on repeated number, please find out the number<br/> 限制 : 不可以改變輸入的組數，也只能用 constant extra space (不可以用sort) | solution 1: 鴿籠原理 + binary search O(nlogn)<br/>solution 2: Bit Manipulation<br/>solution 3: fast/low point (不是常數的空間)<br/>solution 4: sort and find repeat (會改變nums) |
+  | 17.10 Majority Element         | **17.10 Majority Element**: A majority element is an element that makes up more than half of the items in an array. Given a positive integers array, find the majority element. If there is no majority element, return-1. Do this inO(N) time and 0(1) space.<br/>Input: 1 2 5 9 5 9 5 5 5 <br/>Output: 5 | 1. 統計每個bit出現的次數，如果該bit出現的數量多於一半，代表major value該bit是1, Time O(n*bit of integer), Space O(1)<br/>2. 使用hash, Time O(n), Space O(n)<br/>3. Two loop, Time O(n^2), Space O(1)<br/>4. 把數值見到ＢＳＴ中，並計算node的數量，如果大於一半則找到major value Time O(nlogn), Space O(n)<br/>5. [Moore’s Voting Algorithm](https://www.geeksforgeeks.org/boyer-moore-majority-voting-algorithm/)<br/>因為有一半以上的數字相同，所以至少會有2個major value相鄰，因此每次選一個數做為candidate，並計算出現的數量，如果出現的數量小於0則替換candicate，最後再檢查一次candicate是否是答案![截圖 2023-03-28 下午10.38.51](../../CrackingTheInterview_Exercise.assets/截圖 2023-03-28 下午10.38.51.png) |
 
 * 比大小/排序
 

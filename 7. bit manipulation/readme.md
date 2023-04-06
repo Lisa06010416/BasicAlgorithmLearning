@@ -157,3 +157,4 @@ def update_ith_bit(num, i, value):
 | **268. Missing Number**            | 給一個組數 有n個不同的數字，由[0, n]間的數字構成，找出遺失的數字 ex nums = [3,0,1] => 2 | solution 1: 將少了一個數的nums跟完整的組數 xor，則相同的變為0，剩下的就是缺少的數<br>solution 2: 對組數再新增一個不服好，並把對應的數字放到相同的index中，最後符號所在的index就會是答案 |
 | **287. Find the Duplicate Number** | 給予一個數列有n+1個值，每個值在1-n之間找到唯一重複的數<br/>限制 : 不可以改變輸入的組數，<br/>限制 :也只能用 constant extra space | solution 1: 鴿籠原理 + binary search <br/>solution 2: Bit Manipulation : 輸入數列在該bit上的1多於有序數列，代表重複的數字該bit會是1 |
 | **371. Sum of Two Integers**       | 在不使用 + - 的情況下做兩數相加                              | 用bit做相加 ex 4(100) + 7(111) = 11(1011)  <br/>1.  不考慮進位 1 (1) ，做xor運算 <br/>2. 進位 10 (1010)，做 and運算在左移一位  <br/>3. 和剛好是1.2.兩數相加，要相加的部分在繼續重複1.2.直到2值為0  <br/>4. 負數的部分，調用 ＆ mask, 且最終的回傳值要用MAX判斷 |
+|                                    |                                                              |                                                              |

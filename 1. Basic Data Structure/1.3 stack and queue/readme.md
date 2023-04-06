@@ -46,7 +46,7 @@
 
 | 題目                              | 描述                                                         | 解法                                                         |
 | --------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 341. Flatten Nested List Iterator | 實作一個iterator物件每次返回巢狀迴圈中的一個數字<br/>Input: nestedList = [[1,1],2,[3,3]] <br>Output: [1,1,2,3,3] | 1. stack<br><img src="readme.assets/截圖 2023-02-01 下午9.08.33.png" alt="截圖 2023-02-01 下午9.08.33" style="zoom:50%;" /><br>2. Dequeue |
+| 341. Flatten Nested List Iterator | 實作一個iterator物件每次返回巢狀迴圈中的一個數字<br/>Input: nestedList = [[1,1],2,[3,3]] <br>Output: [1,1,2,3,3] | 1. stack<br><img src="readme.assets/截圖 2023-02-01 下午9.08.33.png" alt="截圖 2023-02-01 下午9.08.33" style="zoom:50%;" /><br>![截圖 2023-04-05 下午6.57.06](readme.assets/截圖 2023-04-05 下午6.57.06.png)<img src="readme.assets/截圖 2023-04-05 下午6.57.18.png" alt="截圖 2023-04-05 下午6.57.18" style="zoom: 50%;" /> |
 | 394. Decode String                | Input: s = "2[abc]3[cd]ef" <br>Output: "abcabccdcdcdef"      | 1. Recursive: 遇到左括號則將後面的字串丟入recursive拿到括號內解碼的字符串<br>2. Stack: 使用stack(也可以用兩個stack)<img src="readme.assets/截圖 2023-02-03 下午9.57.17.png" alt="截圖 2023-02-03 下午9.57.17" style="zoom:50%;" /> |
 
 ### 1.2 Queue
