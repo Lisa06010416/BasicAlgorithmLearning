@@ -97,7 +97,7 @@
 
 | 題目                | 說明                                                         | 解法                                                         |
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 326. Power of Three | Given an integer `n`, return *`true` if it is a power of three. Otherwise, return `false`*.An integer `n` is a power of three, if there exists an integer `x` such that `n == 3x`. | solution 1: 一直除與3看餘數是否為零<br>solution 2: n == 3^x 兩邊同取log，logn/logx = x(整數)![截圖 2023-01-21 下午8.24.09](readme.assets/截圖 2023-01-21 下午8.24.09.png) |
+| 326. Power of Three | Given an integer `n`, return *`true` if it is a power of three. Otherwise, return `false`*.An integer `n` is a power of three, if there exists an integer `x` such that `n == 3^x`. | solution 1: 一直除與3看餘數是否為零<br>solution 2: n == 3^x 兩邊同取log，logn/log3 = x(整數)![截圖 2023-01-21 下午8.24.09](readme.assets/截圖 2023-01-21 下午8.24.09.png) |
 
 
 
@@ -114,8 +114,8 @@
 | 問題                                                         | 答案                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 等比級數的公式？<br>1/2 + 1/4 + ..... + 1/n =?<br>1 + 2 + 4 帶入等比級數公式？ | <img src="readme.assets/截圖 2023-02-15 下午6.42.15.png" alt="截圖 2023-02-15 下午6.42.15" style="zoom:40%;" /><br>1<br>1(1-2^3) / 1-2 = 7 |
-| 2^0 + 2^1 + ... + 2^n =?                                     | 2^(n-1)                                                      |
-| 行列式展開？<img src="readme.assets/截圖 2023-03-15 下午11.36.11.png" alt="截圖 2023-03-15 下午11.36.11" style="zoom:30%;" /> | <img src="readme.assets/截圖 2023-03-15 下午11.36.55.png" alt="截圖 2023-03-15 下午11.36.55" style="zoom:50%;" /> |
+| 2^0 + 2^1 + ... + 2^n =?                                     | 2^(n+1) - 1                                                  |
+| 行列式（determinant）展開？<br><img src="readme.assets/截圖 2023-03-15 下午11.36.11.png" alt="截圖 2023-03-15 下午11.36.11" style="zoom:30%;" /> | <img src="readme.assets/截圖 2023-03-15 下午11.36.55.png" alt="截圖 2023-03-15 下午11.36.55" style="zoom:50%;" /> |
 
 
 
@@ -207,5 +207,4 @@
         ## 錯誤，原因與之前使用 round 函數時相同
         Decimal('1.11')
         ````
-
 

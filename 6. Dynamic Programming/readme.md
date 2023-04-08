@@ -114,8 +114,8 @@
 | 題目                                                         | 說明                                                         | 解法                                                         |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 1130. Minimum Cost Tree From Leaf Values                     | 給予一個bunary tree 的leaf in-order 數值的 array，該tree的node都會是其全部leaf中最大兩數的乘積，求非leaf nodel最小的合是多少。<img src="readme.assets/截圖 2023-02-04 下午3.06.23.png" alt="截圖 2023-02-04 下午3.06.23" style="zoom:40%;" /><br>Input: arr = [6,2,4] <br>Output: 32 | 讓dp紀錄每個區間的最小值，每次更新時算出左右兩個最大leaf的乘積，加上之前區間的最小值<br>![leetcode_1130](readme.assets/leetcode_1130.png) |
-| [Burst Balloons](https://leetcode.com/problems/burst-balloons/) | 給予一排帶有數字的氣球，每次打破一個氣球可以獲得鄉林氣球相乘的份數，最高可以得幾分？<br>nums = [3,1,5,8] --> [3,5,8] --> [3,8] --> [8] --> [] <br>coins =  3\*1\*5    +   3\*5\*8   +  1\*3\*8  + 1\*8\*1 = 167 | ![截圖 2023-01-11 下午7.43.58](readme.assets/截圖 2023-01-11 下午7.43.58.png) |
-| [Remove Boxes](http://www.cnblogs.com/grandyang/p/6850657.html) | 每次可以選一個數字，由數列中移除相連的部分，該數字連續有k個的話可以獲得k*k score，最高可以得幾分![截圖 2023-01-11 下午7.46.55](readme.assets/截圖 2023-01-11 下午7.46.55.png) | 跟 Best Balloons 相似                                        |
+| [Burst Balloons](https://leetcode.com/problems/burst-balloons/) | 給予一排帶有數字的氣球，每次打破一個氣球可以獲得相鄰氣球相乘的份數，最高可以得幾分？<br>nums = [3,1,5,8] --> [3,5,8] --> [3,8] --> [8] --> [] <br>coins =  3\*1\*5    +   3\*5\*8   +  1\*3\*8  + 1\*8\*1 = 167 | ![截圖 2023-01-11 下午7.43.58](readme.assets/截圖 2023-01-11 下午7.43.58.png) |
+| **546. Remove Boxes**                                        | 每次可以選一個數字，由數列中移除相連的部分，該數字連續有k個的話可以獲得k*k score，最高可以得幾分![截圖 2023-01-11 下午7.46.55](readme.assets/截圖 2023-01-11 下午7.46.55.png) | 因為如果讓原本不相連的數字，透過先打破其他氣球，讓其相連的話會獲得更高的分數，因此不能只用二維ＤＰ[i][j]只紀錄 i-j 範圍內最高的直，使用3維 DP[i][j][l] 紀錄在i-j位子內 有l筆跟i位子數字一樣的氣球還未消除![截圖 2023-04-08 下午2.41.53](readme.assets/截圖 2023-04-08 下午2.41.53.png) |
 | 8.14 Boolean Evaluation                                      | Given a boolean expression consisting of the symbols 0 (false), 1 (true), & (AND), I (OR), and /\ (XOR), and a desired boolean result value result, implement a function to count the number of ways of parenthesizing the expression such that it evaluates to result.<br/>EXAMPLE<br/>countEval("l /\01011", false) -> 2 <br/>countEval("0&0&0&1/\ll0", true) -> 10<br> | [Solution](https://www.geeksforgeeks.org/boolean-parenthesization-problem-dp-37/) |
 
 
@@ -188,7 +188,7 @@
 
 | 題目                                                         | 說明                                                         |                                                              |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [198. House Robber](https://leetcode.com/problems/house-robber/) | 一個小偷給予一個每個枋子的價值的陣列，不能連續偷兩間房子，求最大的金額<br>Input: nums = [1,2,3,1] <br>Output: 4 <br>Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3). | ![截圖 2023-01-13 下午9.28.59](readme.assets/截圖 2023-01-13 下午9.28.59.png) |
+| [198. House Robber](https://leetcode.com/problems/house-robber/) | 一個小偷給予一個每個房子的價值的陣列，不能連續偷兩間房子，求最大的金額<br>Input: nums = [1,2,3,1] <br>Output: 4 <br>Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3). | ![截圖 2023-01-13 下午9.28.59](readme.assets/截圖 2023-01-13 下午9.28.59.png) |
 | House Robber cycle                                           | 同上題，但是房子是一個圓，不同同使搶第一家跟最後一家         | 分別去掉第一家跟最後一家求兩次答案                           |
 
 
