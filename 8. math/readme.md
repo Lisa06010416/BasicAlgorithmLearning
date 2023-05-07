@@ -29,7 +29,7 @@
 
 3. 兩個數字ＸＹ的gcd跟lcm有哪些特性
 
-   * Dvisibility<img src="/Users/lisa/Learn/AlgorithmLearning/8. math/readme.assets/prime.png" alt="截圖 2022-08-08 下午10.23.47" style="zoom: 100%;" />
+   * Dvisibility<img src="readme.assets/prime.png" alt="截圖 2022-08-08 下午10.23.47" style="zoom: 100%;" />
 
 
 
@@ -52,7 +52,7 @@
     
 * Bayes' theorem
   
-    <img src="/Users/lisa/Learn/AlgorithmLearning/8. math/readme.assets/截圖 2022-08-30 下午8.59.20.png" alt="截圖 2022-08-30 下午8.59.20" style="zoom:100%;" />
+    <img src="readme.assets/截圖 2022-08-30 下午8.59.20.png" alt="截圖 2022-08-30 下午8.59.20" style="zoom:100%;" />
 
 
 
