@@ -23,14 +23,14 @@
 
 | 題目                               | 說明                                                         | 解法                                                         |
 | ---------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 143. Reorder List                  | 將一個linkling list的後半部反轉並插入前半部的node間，由 1->2->3->4 改為 1->4->2->3 | 先用快慢指針切分list，反轉第二個list在合併兩個list![截圖 2023-01-31 下午7.10.17](readme.assets/截圖 2023-01-31 下午7.10.17.png) |
-| 138. Copy List with Random Pointer | 拷貝一個帶有隨機指針的list，該list除了next pointer外還有一個random pointer會指向link list中的任意node | 困難的部分是random pointer 在複製時要如何對應到新的node<br>1. 用hash map紀錄原本跟link list跟複製的link list節點間的對應關係，根據hash map來指定random pointer<br>2. 如果不使用額外的空間的話：<br>  a. 在原本link list後拷貝出新的node（random為空)<br>  b. 給random賦值<br>  c. 斷開新舊節點的連結<br/>![截圖 2023-01-31 下午8.38.49](readme.assets/截圖 2023-01-31 下午8.38.49.png) |
+| 143. Reorder List                  | 將一個linkling list的後半部反轉並插入前半部的node間，由 1->2->3->4 改為 1->4->2->3 | 先用快慢指針切分list，反轉第二個list在合併兩個list<img src="readme.assets/截圖 2023-01-31 下午7.10.17.png" alt="截圖 2023-01-31 下午7.10.17" style="zoom:67%;" /> |
+| 138. Copy List with Random Pointer | 拷貝一個帶有隨機指針的list，該list除了next pointer外還有一個random pointer會指向link list中的任意node | 困難的部分是random pointer 在複製時要如何對應到新的node<br>1. 用hash map紀錄原本跟link list跟複製的link list節點間的對應關係，根據hash map來指定random pointer<br>2. 如果不使用額外的空間的話：<br>  a. 在原本link list後拷貝出新的node（random為空)<br>  b. 給random賦值<br>  c. 斷開新舊節點的連結<br/><img src="readme.assets/截圖 2023-01-31 下午8.38.49.png" alt="截圖 2023-01-31 下午8.38.49" style="zoom:150%;" /> |
 
 ### 2.2 資料結構
 
 | 題目           | 說明                                                         | 解法                                                         |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 146. LRU Cache | 實作一個LRU cache<br> least recently used (LRU)，把最久沒用的資料移出cache | 同時使用：double link list來維護資料的順序以及hash(紀錄值以及node的映射)來查找資料<br>![截圖 2023-02-01 下午6.51.23](readme.assets/截圖 2023-02-01 下午6.51.23.png) |
+| 146. LRU Cache | 實作一個LRU cache<br> least recently used (LRU)，把最久沒用的資料移出cache | 同時使用：double link list來維護資料的順序以及hash(紀錄值以及node的映射)來查找資料<br><img src="readme.assets/截圖 2023-02-01 下午6.51.23.png" alt="截圖 2023-02-01 下午6.51.23" style="zoom:150%;" /> |
 
 ### 2.3 Fast/Slow pointer
 

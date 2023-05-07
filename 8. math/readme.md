@@ -29,7 +29,7 @@
 
 3. 兩個數字ＸＹ的gcd跟lcm有哪些特性
 
-   * Dvisibility![截圖 2022-08-08 下午10.23.47](/Users/lisa/Learn/AlgorithmLearning/8. math/readme.assets/prime.png)
+   * Dvisibility<img src="/Users/lisa/Learn/AlgorithmLearning/8. math/readme.assets/prime.png" alt="截圖 2022-08-08 下午10.23.47" style="zoom: 100%;" />
 
 
 
@@ -52,7 +52,7 @@
     
 * Bayes' theorem
   
-    ![截圖 2022-08-30 下午8.59.20](/Users/lisa/Learn/AlgorithmLearning/8. math/readme.assets/截圖 2022-08-30 下午8.59.20.png)
+    <img src="/Users/lisa/Learn/AlgorithmLearning/8. math/readme.assets/截圖 2022-08-30 下午8.59.20.png" alt="截圖 2022-08-30 下午8.59.20" style="zoom:100%;" />
 
 
 
@@ -71,8 +71,8 @@
 
 | 題目                        | 答案                                                         |      |
 | --------------------------- | ------------------------------------------------------------ | ---- |
-| 二項式定理是什麼？ 公式是？ | 二項式連乘的展開式<br>![截圖 2023-01-20 下午6.27.26](readme.assets/截圖 2023-01-20 下午6.27.26.png) |      |
-| 多項式定理是什麼？ 公式是？ | ![截圖 2023-01-20 下午6.27.00](readme.assets/截圖 2023-01-20 下午6.27.00.png) |      |
+| 二項式定理是什麼？ 公式是？ | 二項式連乘的展開式<br><img src="readme.assets/截圖 2023-01-20 下午6.27.26.png" alt="截圖 2023-01-20 下午6.27.26" style="zoom:100%;" /> |      |
+| 多項式定理是什麼？ 公式是？ | <img src="readme.assets/截圖 2023-01-20 下午6.27.00.png" alt="截圖 2023-01-20 下午6.27.00" style="zoom:100%;" /> |      |
 
 
 
@@ -97,7 +97,7 @@
 
 | 題目                | 說明                                                         | 解法                                                         |
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 326. Power of Three | Given an integer `n`, return *`true` if it is a power of three. Otherwise, return `false`*.An integer `n` is a power of three, if there exists an integer `x` such that `n == 3^x`. | solution 1: 一直除與3看餘數是否為零<br>solution 2: n == 3^x 兩邊同取log，logn/log3 = x(整數)![截圖 2023-01-21 下午8.24.09](readme.assets/截圖 2023-01-21 下午8.24.09.png) |
+| 326. Power of Three | Given an integer `n`, return *`true` if it is a power of three. Otherwise, return `false`*.An integer `n` is a power of three, if there exists an integer `x` such that `n == 3^x`. | solution 1: 一直除與3看餘數是否為零<br>solution 2: n == 3^x 兩邊同取log，logn/log3 = x(整數)<img src="readme.assets/截圖 2023-01-21 下午8.24.09.png" alt="截圖 2023-01-21 下午8.24.09" style="zoom:150%;" /> |
 
 
 
@@ -134,9 +134,9 @@
 
 | 題目           | 說明                                                         | 解法                                                         |
 | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 50. Pow(x, n)  | Implement [pow(x, n)](http://www.cplusplus.com/reference/valarray/pow/), which calculates `x` raised to the power `n` (i.e., `x^n`). | ![截圖 2023-01-20 下午7.07.58](readme.assets/截圖 2023-01-20 下午7.07.58.png) |
-| 69. Sqrt(x)    | Given a non-negative integer `x`, return *the square root of* `x` *rounded down to the nearest integer*. The returned integer should be **non-negative** as well. | ![截圖 2023-01-20 下午7.17.14](readme.assets/截圖 2023-01-20 下午7.17.14.png) |
-| 372. Super Pow | Your task is to calculate `a^b` mod `1337` where `a` is a positive integer and `b` is an extremely large positive integer given in the form of an array.<br>Input: a = 2, b = [3] Output: 8 | <img src="readme.assets/截圖 2023-01-21 下午9.15.43.png" alt="截圖 2023-01-21 下午9.15.43" style="zoom:50%;" />![截圖 2023-01-21 下午9.16.15](readme.assets/截圖 2023-01-21 下午9.16.15.png) |
+| 50. Pow(x, n)  | Implement [pow(x, n)](http://www.cplusplus.com/reference/valarray/pow/), which calculates `x` raised to the power `n` (i.e., `x^n`). | <img src="readme.assets/截圖 2023-01-20 下午7.07.58.png" alt="截圖 2023-01-20 下午7.07.58" style="zoom:50%;" /> |
+| 69. Sqrt(x)    | Given a non-negative integer `x`, return *the square root of* `x` *rounded down to the nearest integer*. The returned integer should be **non-negative** as well. | 1. Bunary search<br><img src="../5. Search and Sort/readme.assets/截圖 2023-03-10 上午1.26.10.png" alt="截圖 2023-03-10 上午1.26.10" style="zoom:50%;" /><br>2. 用2的指數去找上限，在一個一個往回找sqrt<img src="readme.assets/截圖 2023-01-20 下午7.17.14.png" alt="截圖 2023-01-20 下午7.17.14" style="zoom:150%;" /> |
+| 372. Super Pow | Your task is to calculate `a^b` mod `1337` where `a` is a positive integer and `b` is an extremely large positive integer given in the form of an array.<br>Input: a = 2, b = [3] Output: 8 | <img src="readme.assets/截圖 2023-01-21 下午9.15.43.png" alt="截圖 2023-01-21 下午9.15.43" style="zoom:50%;" /><img src="readme.assets/截圖 2023-01-21 下午9.16.15.png" alt="截圖 2023-01-21 下午9.16.15" style="zoom:150%;" /> |
 
 
 
@@ -170,7 +170,7 @@
 | 取log                                                        | math.log( x, base)<br> # 會有不精準的問題<br/> math.log(243, 3) = 4.999999<br/> |
 | 平方根 (square root)                                         | math.sqrt(n)                                                 |
 | 取 n 階乘                                                    | math.factoria(n)                                             |
-| Combination, Permutation?                                    | ![截圖 2023-02-14 下午10.49.37](readme.assets/截圖 2023-02-14 下午10.49.37.png) |
+| Combination, Permutation?                                    | <img src="readme.assets/截圖 2023-02-14 下午10.49.37.png" alt="截圖 2023-02-14 下午10.49.37" style="zoom:67%;" /> |
 | 絕對值                                                       | math.abs(a)                                                  |
 | 四捨五入                                                     | round(1,111, 2) = 1.11<br/><br/># 會有不精準的問題<br/># 這是因為在電腦內部，1.115 真正的值是 1.11499999999999999111<br/>round(1.115, 2) = 1.11 |
 | 判斷x是否是整數？                                            | <img src="readme.assets/截圖 2023-01-21 下午8.32.09.png" alt="截圖 2023-01-21 下午8.32.09" style="zoom:50%;" /> |

@@ -19,8 +19,8 @@
 | 問題                                       | 說明                                                         |      |
 | ------------------------------------------ | ------------------------------------------------------------ | ---- |
 | Binary Tree是指？                          | 每個Ｎode最多有兩個子節點                                    |      |
-| Binary Tree 的遍歷類型有哪些？             | 前序 (preorder), 中序 (inorder) 和後序 (postorder) ，指遍歷二元樹 (binary tree) 時，父節點相對於左右節點的順序<br>![截圖 2023-02-13 下午3.33.11](readme.assets/截圖 2023-02-13 下午3.33.11.png) |      |
-| 如果要序列化判斷兩棵樹是否相等，要怎麼做？ | 使用Full Order<br>![截圖 2023-02-13 下午6.24.56](readme.assets/截圖 2023-02-13 下午6.24.56.png) |      |
+| Binary Tree 的遍歷類型有哪些？             | 前序 (preorder), 中序 (inorder) 和後序 (postorder) ，指遍歷二元樹 (binary tree) 時，父節點相對於左右節點的順序<br><img src="readme.assets/截圖 2023-02-13 下午3.33.11.png" alt="截圖 2023-02-13 下午3.33.11" style="zoom:67%;" /> |      |
+| 如果要序列化判斷兩棵樹是否相等，要怎麼做？ | 使用Full Order<br><img src="readme.assets/截圖 2023-02-13 下午6.24.56.png" alt="截圖 2023-02-13 下午6.24.56" style="zoom:67%;" /> |      |
 
 
 
@@ -69,7 +69,7 @@
 | ----------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------- |
 |94 Binary Tree Inorder Traversal|回傳一棵樹的inorder順序|1. 序列化，用BFS/Stack<br>2. Morris Traversal|
 |98. Validate Binary Search Tree|驗證一棵樹是不是BST|遍歷tree並驗證每個點符合BST規則|
-| 99. Recover Binary Search Tree                          | 給一個BST的root，這棵樹中有兩個node不符合BST的規則，請找出來並修正<br> | 1. 中序遍歷樹，將所有的node跟node的值分別放到list中，對node的值做排序，再將node依據排序好的值賦予新的值<br>2. Morris Traversal |
+| **99. Recover Binary Search Tree**                      | 給一個BST的root，這棵樹中有兩個node不符合BST的規則，請找出來並修正<br> | 1. 中序遍歷樹，將所有的node跟node的值分別放到list中，對node的值做排序，再將node依據排序好的值賦予新的值<br>2. 用stack/recursive加上point交換錯誤的node<br><img src="readme.assets/截圖 2023-04-17 下午9.10.26.png" alt="截圖 2023-04-17 下午9.10.26" style="zoom:67%;" /><img src="readme.assets/截圖 2023-04-17 下午9.00.13.png" alt="截圖 2023-04-17 下午9.00.13" style="zoom:150%;" />3. **Morris Traversal** |
 | 100. Same Tree                                          | 給予兩棵樹的root判斷兩棵樹是否一樣                           | 1. 同時遍歷兩顆tree，並在過程中判斷是否相同<br>2. 序列化兩棵樹並比較 |
 | 102. Binary Tree Level Order Traversal                  | 將一顆ＢＳＴ轉為Level Order sequence                         | BFS遍歷tree，並序列化                                        |
 | 104. Maximum Depth of Binary Tree                       | 求一顆樹最大深度                                             | 1. DFS遍歷tree，每個node找出其左有子節點的深度，並回傳自己的深度為max+1<br>2. BFS 遍歷tree，統計總層數 |
@@ -78,15 +78,15 @@
 | **124. Binary Tree Maximum Path Sum**                   | 找到一顆樹中由兩個leaf node組成的path的最大值                | DFS，每個root找齊左右節點的最大值，加上自己後判斷是否要更新答案 |
 | **235. Lowest Common Ancestor of a Binary Search Tree** | 給一棵BST，找出樹上兩個點的最低共同父節點LCA(lowest common ancestor) | 類似236，但不用每次都找左右兩個子樹，如果root大於p跟q則只需要找左子樹，root小魚跟q則只需要找右子樹 |
 | **236. Lowest Common Ancestor of a Binary Tree**        | 給一棵BT樹，找出樹上兩個點的最低共同父節點LCA(lowest common ancestor) | DFS遍歷tree，每個node回傳自己或是自己的子節點是否有target node，每個節點根據左右子節點的回傳資訊判斷自己是否是LCA |
-| **572. Subtree of Another Tree**                        | 判斷一棵樹Ｂ是否是另一棵樹Ａ的substree<br>A subtree of a binary tree `tree` is a tree that consists of a node in `tree` and all of this node's descendants. The tree `tree` could also be considered as a subtree of itself. | 1. 遞迴對Ａ的每個Ｎode判斷由該node開始的tree是否跟Ｂ相同(Same Tree問題）<br>2. 序列化兩棵樹並比較是否相等<br>![截圖 2023-02-13 下午5.43.17](readme.assets/截圖 2023-02-13 下午5.43.17.png) |
-| :star:**Random Node**                                   | You are implementing a binary tree class from scratch which, in addition to insert, find, and delete, has a method getRandomNode() which returns a random node from the tree. All nodes should be equally likely to be chosen. Design and implement an algorithm for getRandomNode, and explain how you would implement the rest of the methods |1. 把樹轉乘inorder的形式，random回傳一個node <br/>2. 改變樹的結構，每個node多紀錄包含自己有幾個子節點，根據random的數字判斷要走左右或是選當錢節點 <br/>![截圖 2023-02-07 下午10.06.15](readme.assets/截圖 2023-02-07 下午10.06.15.png)|
+| **572. Subtree of Another Tree**                        | 判斷一棵樹Ｂ是否是另一棵樹Ａ的substree<br>A subtree of a binary tree `tree` is a tree that consists of a node in `tree` and all of this node's descendants. The tree `tree` could also be considered as a subtree of itself. | 1. 遞迴對Ａ的每個Ｎode判斷由該node開始的tree是否跟Ｂ相同(Same Tree問題）<br>2. 序列化兩棵樹並比較是否相等<br><img src="readme.assets/截圖 2023-02-13 下午5.43.17.png" alt="截圖 2023-02-13 下午5.43.17" style="zoom:67%;" /> |
+| :star:**Random Node**                                   | You are implementing a binary tree class from scratch which, in addition to insert, find, and delete, has a method getRandomNode() which returns a random node from the tree. All nodes should be equally likely to be chosen. Design and implement an algorithm for getRandomNode, and explain how you would implement the rest of the methods |1. 把樹轉乘inorder的形式，random回傳一個node <br/>2. 改變樹的結構，每個node多紀錄包含自己有幾個子節點，根據random的數字判斷要走左右或是選當錢節點 <br/><img src="readme.assets/截圖 2023-02-07 下午10.06.15.png" alt="截圖 2023-02-07 下午10.06.15" style="zoom:150%;" />|
 
 #### construct tree
 
 | 問題                                                         | 描述                                                         | 解法                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **105. Construct Binary Tree from Preorder and Inorder Traversal** | 透過preorder、inorder建立BT<br>preorder = [3,9,20,15,7], <br>inorder = [9,3,15,20,7] <br>Output: [3,9,20,null,null,15,7] | preorder確認root，inorder確認左右子樹<br>![截圖 2023-02-13 下午5.59.23](readme.assets/截圖 2023-02-13 下午5.59.23.png) |
-| 297. Serialize and Deserialize Binary Tree                   | 自行設計一個方式序列化tree並可以反序列化<img src="readme.assets/截圖 2023-02-13 下午8.11.56.png" alt="截圖 2023-02-13 下午8.11.56" style="zoom: 33%;" /> | 1. 使用full preorder serializer tree，在不斷的拿第一個值作為root建立tree<br>![截圖 2023-02-13 下午8.12.50](readme.assets/截圖 2023-02-13 下午8.12.50.png)<br>2. Layer serialize<br>![截圖 2023-02-13 下午7.52.45](readme.assets/截圖 2023-02-13 下午7.52.45.png) |
+| **105. Construct Binary Tree from Preorder and Inorder Traversal** | 透過preorder、inorder建立BT<br>preorder = [3,9,20,15,7], <br>inorder = [9,3,15,20,7] <br>Output: [3,9,20,null,null,15,7] | preorder確認root，inorder確認左右子樹<br><img src="readme.assets/截圖 2023-02-13 下午5.59.23.png" alt="截圖 2023-02-13 下午5.59.23" style="zoom:150%;" /> |
+| 297. Serialize and Deserialize Binary Tree                   | 自行設計一個方式序列化tree並可以反序列化<img src="readme.assets/截圖 2023-02-13 下午8.11.56.png" alt="截圖 2023-02-13 下午8.11.56" style="zoom: 33%;" /> | 1. 使用full preorder serializer tree，在不斷的拿第一個值作為root建立tree<br><img src="readme.assets/截圖 2023-02-13 下午8.12.50.png" alt="截圖 2023-02-13 下午8.12.50" style="zoom:150%;" /><br>2. Layer serialize<br><img src="readme.assets/截圖 2023-02-13 下午7.52.45.png" alt="截圖 2023-02-13 下午7.52.45" style="zoom:150%;" /> |
 
 
 
@@ -101,8 +101,8 @@
 | BST中刪除一個Ｎode?                             | 該節點沒有左右子樹  -> 直接刪除 <br>該節點只有右子樹     ->  刪掉節點，將右子樹替換到刪除節點的位子  <br/>該節點只有左子樹    ->  找到刪除節點左子數中的最大值的節點替換到刪除節點的位子 <br/>該節點有左右子樹    ->  找到刪除節點左子數中的最大值的節點替換到刪除節點的位子 |
 | BST中插入一個新Ｎode?                           | 不斷做search直到空節點，在該位置新增節點                     |
 | BST中查詢一個值？                               | DFS，如果當前node比target小代表target在右邊，當前node比target大代表target在左邊 |
-| 找到ＢＳＴ中 小於/小於等於 target的最大值node   | ![截圖 2023-02-07 下午9.43.42](readme.assets/截圖 2023-02-07 下午9.43.42.png) |
-| 找到ＢＳＴ中 大於/大於等於 target的最大值node   | ![截圖 2023-02-07 下午9.43.51](readme.assets/截圖 2023-02-07 下午9.43.51.png) |
+| 找到ＢＳＴ中 小於/小於等於 target的最大值node   | <img src="readme.assets/截圖 2023-02-07 下午9.43.42.png" alt="截圖 2023-02-07 下午9.43.42" style="zoom:150%;" /> |
+| 找到ＢＳＴ中 大於/大於等於 target的最大值node   | <img src="readme.assets/截圖 2023-02-07 下午9.43.51.png" alt="截圖 2023-02-07 下午9.43.51" style="zoom:150%;" /> |
 
 
 
@@ -114,8 +114,8 @@
 | **Pramp : Largest Smaller BST Key** | 給予一個BST以及樹中的一個node找到該樹中小於target node的最大node | 找到ＢＳＴ中小於target的最大值node |
 | **230. Kth Smallest Element in a BST** | 找到ＢＳＴ中第k個小的值  | 中序遍歷到第Ｋ個值<br>對二元搜尋樹 (binary search tree, BST) 做 inorder traversal 就是由小到大依序遍歷。 |
 | **Minimal Tree**<br>108. Convert Sorted Array to Binary Search Tree | 給予一個排序好且元素不重複的array，設計一個方法可以建出樹高最小的BST | 已知如果要讓ＢＳＴ樹高最小，每次都拿中位數的點作為root，可以確保左右子樹有一樣數量的節點。遞迴每一次都丟中間的值去建立，並切分array為左有兩個部分再分別遞迴去建立BST<br><img src="readme.assets/截圖 2023-02-14 下午8.20.39.png" alt="截圖 2023-02-14 下午8.20.39" style="zoom:50%;" /> |
-| **95. Unique Binary Search Trees II**                        | give a postive number n, generate all BST which has node id from 1 to n<br><img src="readme.assets/截圖 2023-02-14 下午8.22.02.png" alt="截圖 2023-02-14 下午8.22.02" style="zoom:50%;" /> | backtracking，每個node分別視為root，根據root切分左右序列遞回建立左右子樹，使用memory紀錄在序列i-j可能有的root list，如果該區間已經計算過則直接使用之前計算的結果<br><img src="readme.assets/截圖 2023-02-14 下午8.45.33.png" alt="截圖 2023-02-14 下午8.45.33" style="zoom:50%;" /> |
-| :star:**BST Sequences**                                      | 給予一顆ＢＳＴ，回傳可能可以建出該樹的全部input array        | ![截圖 2023-02-14 下午10.20.30](readme.assets/截圖 2023-02-14 下午10.20.30.png) |
+| **95. Unique Binary Search Trees II**                        | give a postive number n, generate all BST which has node id from 1 to n<br><img src="readme.assets/截圖 2023-02-14 下午8.22.02.png" alt="截圖 2023-02-14 下午8.22.02" style="zoom: 150%;" /> | backtracking，每個node分別視為root，根據root切分左右序列遞回建立左右子樹，使用memory紀錄在序列i-j可能有的root list，如果該區間已經計算過則直接使用之前計算的結果<br><img src="readme.assets/截圖 2023-02-14 下午8.45.33.png" alt="截圖 2023-02-14 下午8.45.33" style="zoom:50%;" /> |
+| :star:**BST Sequences**                                      | 給予一顆ＢＳＴ，回傳可能可以建出該樹的全部input array        | <img src="readme.assets/截圖 2023-02-14 下午10.20.30.png" alt="截圖 2023-02-14 下午10.20.30" style="zoom:150%;" /> |
 | 1569. Number of Ways to Reorder Array to Get Same BST        | 給一個 nums array 代表insert node的順序，計算可以有幾種不同insert２的順序可以產生一樣的ＢＳＴ<br><img src="readme.assets/截圖 2023-02-14 下午9.10.55.png" alt="截圖 2023-02-14 下午9.10.55" style="zoom: 33%;" /> | 第一個num會是root，後面不管順序小於root在左邊，大於root在右邊<br><img src="readme.assets/截圖 2023-02-14 下午10.42.21.png" alt="截圖 2023-02-14 下午10.42.21" style="zoom:50%;" /> |
 
 ## 2.3 Binary Heap / Min/Xax Heap / Priority Queue  :star::star::star:
@@ -153,7 +153,7 @@
 | **313. Super Ugly Number**                       | 給予一個質數列表找到第n個Super Ugly Number(指其全部的prime factor都在給定的prime list中)<br/>Input: n = 12, <br/>primes = [2,7,13,19] <br/>Output: 32 <br/>Explanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 super ugly numbers given primes = [2,7,13,19]. | ![截圖 2023-02-18 下午7.55.07](readme.assets/截圖 2023-02-18 下午7.55.07.png) |
 | 347. Top K Frequent Elements                     | 給一個nums array找出前k個最常出現的數字，時間複雜度小於 O(n log n) <br>Input: nums = [1,1,1,2,2,3], k = 2 Output: [1,2] | 1. 先遍歷一次計算每個元素出現的次數在HashMap中，在把出現的次數跟元素放到list中做sort，Ｔime：Ｏ(nlogn)<br>2. 先遍歷一次計算每個元素出現的次數在HashMap中，在把出現的次數跟元素一起放入max heap，再由heap中pop出k個數值<br>Ｔime = n(HashMap) + n(heaprify) + klog(pop k ) = O(n + klogn)<br>3. 先遍歷一次計算每個元素出現的次數在HashMap中，之後依序把出現的次數跟元素一起放入max heap，如果max heap的數值大於k則pop，Ｔime：Ｏ(nlogk) |
 | **378. Kth Smallest Element in a Sorted Matrix** | 給予一個行與列都排序好的matrix，找到第k個小的元素<br/>Input: matrix = [[1,5,9],[10,11,13],[12,13,15]], k = 8 Output: 13 | 1. 把數值全部加入max heap中，如果heap內的值大數量於k，則pop，最後root會是答案<br>2. **binary search**<img src="readme.assets/截圖 2023-02-18 下午8.01.20.png" alt="截圖 2023-02-18 下午8.01.20" style="zoom:50%;" /> |
-| **218. The Skyline Problem**                     | 給予一組建築物的list(start, end, hight)，計算出skyline<br>Input: buildings = [[0,2,3],[2,5,3]] <br>Output: [[0,3],[5,0]]<img src="readme.assets/截圖 2023-02-15 下午8.41.07.png" alt="截圖 2023-02-15 下午8.41.07" style="zoom:50%;" /> | ![截圖 2023-02-18 下午9.47.44](readme.assets/截圖 2023-02-18 下午9.47.44.png) |
+| **218. The Skyline Problem**                     | 給予一組建築物的list(start, end, hight)，計算出skyline<br>Input: buildings = [[0,2,3],[2,5,3]] <br>Output: [[0,3],[5,0]]<img src="readme.assets/截圖 2023-02-15 下午8.41.07.png" alt="截圖 2023-02-15 下午8.41.07" style="zoom:50%;" /> | <img src="readme.assets/截圖 2023-02-18 下午9.47.44.png" alt="截圖 2023-02-18 下午9.47.44" style="zoom:150%;" /> |
 
 
 

@@ -47,7 +47,7 @@
 | 題目                              | 描述                                                         | 解法                                                         |
 | --------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 341. Flatten Nested List Iterator | 實作一個iterator物件每次返回巢狀迴圈中的一個數字<br/>Input: nestedList = [[1,1],2,[3,3]] <br>Output: [1,1,2,3,3] | 1. stack<br><img src="readme.assets/截圖 2023-02-01 下午9.08.33.png" alt="截圖 2023-02-01 下午9.08.33" style="zoom:50%;" /><br><img src="readme.assets/截圖 2023-04-05 下午6.57.06.png" alt="截圖 2023-04-05 下午6.57.06" style="zoom:150%;" /><img src="readme.assets/截圖 2023-04-05 下午6.57.18.png" alt="截圖 2023-04-05 下午6.57.18" style="zoom: 50%;" /> |
-| 394. Decode String                | Input: s = "2[abc]3[cd]ef" <br>Output: "abcabccdcdcdef"      | 1. Recursive: 遇到左括號則將後面的字串丟入recursive拿到括號內解碼的字符串<br>2. Stack: 使用stack(也可以用兩個stack)<img src="readme.assets/截圖 2023-02-03 下午9.57.17.png" alt="截圖 2023-02-03 下午9.57.17" style="zoom:50%;" /> |
+| 394. Decode String                | Input: s = "2[abc]3[cd]ef" <br>Output: "abcabccdcdcdef"      | 1. Recursive: 遇到左括號則將後面的字串丟入recursive拿到括號內解碼的字符串<br>2. Stack: 使用stack(也可以用兩個stack)<img src="readme.assets/截圖 2023-04-17 下午7.40.47.png" alt="截圖 2023-04-17 下午7.40.47" style="zoom:50%;" /> |
 
 ### 1.2 Queue
 
@@ -62,8 +62,8 @@
 | 問題                          | 答案                                                         |
 | ----------------------------- | ------------------------------------------------------------ |
 | 什麼時候要用 monotonic stack? | 1. 每個元素 **第一個 大於/小於** 的值<br>2. 每個元素左右有**幾個連續大於/小於**自己的直 |
-| Ascending monotonic stack     | ![未命名](readme.assets/未命名-0944121.gif)<br><img src="readme.assets/截圖 2023-04-08 下午4.56.06.png" alt="截圖 2023-04-08 下午4.56.06" style="zoom:150%;" /> |
-| Descending monotonic stack    | ![未命名1](readme.assets/未命名1.gif)<img src="readme.assets/截圖 2023-04-08 下午5.02.10.png" alt="截圖 2023-04-08 下午5.02.10" style="zoom:150%;" /> |
+| Ascending monotonic stack     | <img src="readme.assets/未命名-0944121.gif" alt="未命名" style="zoom:67%;" /><br><img src="readme.assets/截圖 2023-04-08 下午4.56.06.png" alt="截圖 2023-04-08 下午4.56.06" style="zoom:150%;" /> |
+| Descending monotonic stack    | <img src="readme.assets/未命名1.gif" alt="未命名1" style="zoom:67%;" /><img src="readme.assets/截圖 2023-04-08 下午5.02.10.png" alt="截圖 2023-04-08 下午5.02.10" style="zoom:150%;" /> |
 
 
 
@@ -110,4 +110,8 @@
 | **Three in One**             | Describe how you could use a single array to implement three stacks | 1. 使用6個point去紀錄3個list的起始位子跟結束位子，當某個stack的資料沒地方放的時候要移動stack的位子<br>2. array中間隔去放3個stack的資料 |
 | Stack of Plates              | Imagine a (literal) stack of plates. If the stack gets too high, it might topple.<br/>Implement SetOfStacks composed of several stacks and should create a new stack once the previous one exceeds capacity. SetOfStacks. push() and SetOfStacks. pop() should behave identically to a single stack (that is, pop() should return the same values as it would if there were just a single stack). <br/>FOLLOW UP<br/>Implement a function popAt(int index) which performs a popoperation on a specific sub-stack. | 有一個stack list，存放個個sub stack，如果stack滿了，則新增一個stack在list中，每次pop/push都先操最最新的stack |
 | **Sort Stack**               | Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and isEmpty. | 使用一個temStack:<br>1. 每次從stack中pop一個值(v)<br>2. 如果tempStack的top大於v，則把其push回stack，並把v push到tempStack<br><img src="readme.assets/截圖 2023-02-07 下午6.28.42.png" alt="截圖 2023-02-07 下午6.28.42" style="zoom:33%;" /> |
+
+
+
+
 
