@@ -99,11 +99,11 @@
 ## python sort 套件
 | Question | Describtion |
 | ------------- | ---- |
-|排序一個list? 是否要reverse?|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.11.32.png" alt="截圖 2022-09-27 下午11.11.32" style="zoom:50%;" />|
-|[['c', 1], ['b', -4],  ['a', 7]] 直接sort? 根據第二個值sort?|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.13.25.png" alt="截圖 2022-09-27 下午11.13.25" style="zoom:50%;" />|
-|[2, 1, 0, 3] 如何根據list的直對index排序|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.15.06.png" alt="截圖 2022-09-27 下午11.15.06" style="zoom:50%;" />|
-|Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.<br>Since the result may be very large, so you need to return a string instead of an integer.<br>Input: nums = [3,30,34,5,9] <br>Output: "9534330"|<img src="/Users/lisa/Learn/AlgorithmLearning/5. Search and Sort/readme.assets/截圖 2022-09-27 下午11.08.03.png" alt="截圖 2022-09-27 下午11.08.03" style="zoom:40%;" />|
-|對物件做排序|The sort routines are guaranteed to use __lt__() when making comparisons between two object<br>python object 比較的fintion: <img src="readme.assets/截圖 2023-03-24 下午10.29.37.png" alt="截圖 2023-03-24 下午10.29.37" style="zoom:30%;" /><img src="readme.assets/截圖 2023-03-24 下午10.27.26.png" alt="截圖 2023-03-24 下午10.27.26" style="zoom:50%;" />|
+|排序一個list? 是否要reverse?|<img src="readme.assets/截圖 2022-09-27 下午11.11.32.png" alt="截圖 2022-09-27 下午11.11.32" style="zoom:50%;" />|
+|[['c', 1], ['b', -4],  ['a', 7]] 直接sort? 根據第二個值sort?|<img src="readme.assets/截圖 2022-09-27 下午11.13.25.png" alt="截圖 2022-09-27 下午11.13.25" style="zoom:50%;" />|
+|[2, 1, 0, 3] 如何根據list的直對index排序|<img src="readme.assets/截圖 2022-09-27 下午11.15.06.png" alt="截圖 2022-09-27 下午11.15.06" style="zoom:50%;" />|
+|Given a list of non-negative integers nums, arrange them such that they form the largest number and return it.<br>Since the result may be very large, so you need to return a string instead of an integer.<br>Input: nums = [3,30,34,5,9] <br>Output: "9534330"|<img src="readme.assets/截圖 2022-09-27 下午11.08.03.png" alt="截圖 2022-09-27 下午11.08.03" style="zoom:40%;" />|
+|對物件做排序|The sort routines are guaranteed to use __lt__() when making comparisons between two object<br>python object 比較的fintion:<br> <img src="readme.assets/截圖 2023-03-24 下午10.29.37.png" alt="截圖 2023-03-24 下午10.29.37" style="zoom:30%;" /><img src="readme.assets/截圖 2023-03-24 下午10.27.26.png" alt="截圖 2023-03-24 下午10.27.26" style="zoom:50%;" />|
 
 
 ## 題目
