@@ -53,13 +53,16 @@
 
 * preorder, inorder, postorder, layer order 遍歷的方式
 
-| 問題                                              | 解答                                                         |
-| ------------------------------------------------- | ------------------------------------------------------------ |
-| 用stack做preorder traversal?                      | 中>左>右。用stack實作，先把目前節點輸出再把左右子節點放到stack中。<br><img src="readme.assets/截圖 2023-02-13 下午4.19.13.png" alt="截圖 2023-02-13 下午4.19.13" style="zoom: 33%;" /> |
-| 用stack做inorder traversal?                       | <img src="readme.assets/截圖 2023-02-13 下午4.21.09.png" alt="截圖 2023-02-13 下午4.21.09" style="zoom:67%;" /> |
-| 用stack做postorder traversal?                     | 左>右>中。將父節點和左右子節點都放進 stack 中，並將父節點的左右子節點設為 `NULL`。當 stack pop 出一個節點沒有左右子節點時，表示他的左右子節點已經被拜訪過了，則可以拜訪父節點。<br><img src="readme.assets/截圖 2023-02-13 下午4.28.34.png" alt="截圖 2023-02-13 下午4.28.34" style="zoom: 33%;" /> |
-| 用recursive做preorder/inorder/postorder traversal | <img src="readme.assets/截圖 2023-02-13 下午4.17.41.png" alt="截圖 2023-02-13 下午4.17.41" style="zoom: 33%;" /> |
-| Layer order?                                      | 用BFS(queue)<br><img src="readme.assets/截圖 2023-02-13 下午4.37.24.png" alt="截圖 2023-02-13 下午4.37.24" style="zoom: 33%;" /> |
+| 問題                                                         | 解答                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 用stack做preorder traversal?                                 | 中>左>右。用stack實作，先把目前節點輸出再把左右子節點放到stack中。<br><img src="readme.assets/截圖 2023-02-13 下午4.19.13.png" alt="截圖 2023-02-13 下午4.19.13" style="zoom: 33%;" /> |
+| 用stack做inorder traversal?                                  | <img src="readme.assets/截圖 2023-02-13 下午4.21.09.png" alt="截圖 2023-02-13 下午4.21.09" style="zoom:67%;" /> |
+| 用stack做postorder traversal?                                | 左>右>中。將父節點和左右子節點都放進 stack 中，並將父節點的左右子節點設為 `NULL`。當 stack pop 出一個節點沒有左右子節點時，表示他的左右子節點已經被拜訪過了，則可以拜訪父節點。<br><img src="readme.assets/截圖 2023-02-13 下午4.28.34.png" alt="截圖 2023-02-13 下午4.28.34" style="zoom: 33%;" /> |
+| 用recursive做preorder/inorder/postorder traversal            | <img src="readme.assets/截圖 2023-02-13 下午4.17.41.png" alt="截圖 2023-02-13 下午4.17.41" style="zoom: 33%;" /> |
+| Layer order?                                                 | 用BFS(queue)<br><img src="readme.assets/截圖 2023-02-13 下午4.37.24.png" alt="截圖 2023-02-13 下午4.37.24" style="zoom: 33%;" /> |
+| Maximum Width of Binary Tree，找出數中最大的寬度<img src="readme.assets/截圖 2023-06-03 下午1.11.17.png" alt="截圖 2023-06-03 下午1.11.17" style="zoom:50%;" /> | 每一個子節點在full binary tree中的寬度位子會是原本的副節點*2 跟 *2 + 1，找出每一層最小跟最大的子結點可以知道每一層的最大寬度![截圖 2023-06-03 上午12.32.16](readme.assets/截圖 2023-06-03 上午12.32.16-5769022.png) |
+
+
 
 * 遍歷樹判斷是否達成某條件
 
