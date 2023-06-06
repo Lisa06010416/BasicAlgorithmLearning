@@ -1,9 +1,9 @@
 # Table of contents
 
 * [1. Basic Data Structure](README.md)
-  * [1.1 Array and String and Hash](<1. Basic Data Structure/1.1 array and hash/readme.md>)
-  * [1.2 Linking List](1.-basic-data-structure/1.2-linking-list.md)
-  * [1.3 Stack and Queue](1.-basic-data-structure/1.3-stack-and-queue.md)
+  * [1.1 Array and String and Hash](<1. Basic Data Structure/1.1-array-hash.md>)
+  * [1.2 Linking List](1.1-array-hash.md/1.2-linking-list.md)
+  * [1.3 Stack and Queue](1.1-array-hash.md/1.3-stack-and-queue.md)
 * [2 Tree](<2. Tree/readme.md>)
 * [3 Graph](<3. Graph/readme.md>)
 * [4. DFS, Recusive and BFS](<4. DFS, Recusive and BFS/readme.md>)
